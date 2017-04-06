@@ -1,0 +1,85 @@
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+-->
+<div class="oj-hybrid-padding">
+    <h3>Incidents Content Area</h3>
+    <div>
+        <div id="filmStripDiv" class="oj-panel" style="margin: 20px;">
+            <div id="filmStrip" 
+                 aria-label="Set of chemicals" 
+                 data-bind="ojComponent: {
+           component: 'ojFilmStrip', 
+           arrowPlacement: currentNavArrowPlacement, 
+           arrowVisibility: currentNavArrowVisibility}">
+                <!-- ko foreach: chemicals -->
+                <div class="oj-panel oj-panel-alt2 demo-filmstrip-item" 
+                     data-bind="style: {
+                             display: getItemInitialDisplay($index())}">
+                    <img data-bind="attr: {src: path}" />
+                </div>
+                <!-- /ko -->
+            </div>
+        </div> 
+    </div>
+    <div class="oj-flex-items-pad demo-flex-display" align="center">
+        <div class="oj-flex" id="buttons-container">
+            <div class="oj-sm-4 oj-flex-item">    
+                <button class="button" id= "searchButton"
+                        data-bind="click: buttonClick, 
+                       ojComponent: { component: 'ojButton', label: 'Search'}">
+                </button>
+            </div>
+            <div class="oj-sm-4 oj-flex-item">    
+                <button id= "ballButton"
+                        data-bind="click: buttonClick, 
+                       ojComponent: { component: 'ojButton', label: 'Ball Games' }">
+                </button>
+            </div>
+            <div class="oj-sm-4 oj-flex-item">    
+                <button id= "gymButton"
+                        data-bind="click: buttonClick, 
+                       ojComponent: { component: 'ojButton', label: 'Gymnastics' }">
+                </button>
+            </div>
+        </div>       
+        <div class="oj-flex">
+            <div class="oj-sm-4 oj-flex-item">    
+                <button id= "createButton" 
+                        data-bind="click: buttonClick, 
+                       ojComponent: { component: 'ojButton', label: 'Create' }">
+                </button>
+            </div>
+            <div class="oj-sm-4 oj-flex-item">    
+                <button id= "OutdoorButton" 
+                        data-bind="click: buttonClick, 
+                       ojComponent: { component: 'ojButton', label: 'Outdoor Activities' }">
+                </button>
+            </div>
+            <div class="oj-sm-4 oj-flex-item">    
+                <button id= "otherButton" 
+                        data-bind="click: buttonClick, 
+                       ojComponent: { component: 'ojButton', label: 'Other Activities' }">
+                </button>
+            </div>
+        </div>
+        <form id="form1">
+            <select id="basicSelect" data-bind="ojComponent: {component: 'ojSelect',
+                                                    value: val,
+                                                    rootAttributes: {style:'max-width:20em'}}">
+                <option value="IE">All</option>
+                <option value="FF">Ball Games</option>
+                <option value="CH">Outdoor</option>
+                <option value="OP">Gym</option>
+                <option value="SA">Swim</option>
+            </select>
+            <input id="inputSearch" placeholder="Search..."
+                   data-bind="ojComponent: {
+          component: 'ojInputSearch',
+          value: keyword,
+          options: tags,
+          rootAttributes: {style:'max-width: 20em'}}">
+        </form>
+    </div>
+
+</div>
