@@ -52,7 +52,8 @@ requirejs.config(
  * objects in the callback
  */
 require(['ojs/ojcore', 'knockout', 'appController', 'ojs/ojknockout',
-  'ojs/ojmodule', 'ojs/ojrouter', 'ojs/ojnavigationlist', 'ojs/ojbutton', 'ojs/ojtoolbar', 'promise','ojs/ojlistview'],
+  'ojs/ojmodule', 'ojs/ojrouter', 'ojs/ojnavigationlist', 'ojs/ojbutton', 'ojs/ojtoolbar', 'promise','ojs/ojlistview',
+  'ojs/ojchart', 'ojs/ojmenu', 'ojs/ojinputnumber', 'ojs/ojsunburst', 'ojs/ojtable', 'ojs/ojarraytabledatasource'],
   function (oj, ko, app) { // this callback gets executed when all required modules are loaded
 
     $(function() {
@@ -64,6 +65,8 @@ require(['ojs/ojcore', 'knockout', 'appController', 'ojs/ojknockout',
             ko.applyBindings(app, document.getElementById('globalBody'));
             ko.applyBindings(new DashboardViewModel, document.getElementById('tables'));
             ko.applyBindings(new IncidentsViewModel, document.getElementById('buttons-container'));
+            ko.applyBindings(new StatisticsContentViewModel, document.getElementById('chart-container'));
+            ko.applyBindings(new StatisticsContentViewModel, document.getElementById('table'));
           },
           function (error) {
             oj.Logger.error('Error in root start: ' + error.message);

@@ -7,11 +7,32 @@
  */
 define(['ojs/ojcore', 'knockout', 'jquery',
     'ojs/ojknockout', 'ojs/ojfilmstrip', 'ojs/ojradioset', 'ojs/ojselectcombobox',
-    'promise', 'ojs/ojtable', 'ojs/ojarraytabledatasource', 'ojs/ojbutton'],
+    'promise', 'ojs/ojtable', 'ojs/ojarraytabledatasource', 'ojs/ojbutton', 'ojs/ojmasonrylayout'],
         function (oj, ko, $) {
 
             function IncidentsViewModel() {
                 var self = this;
+                
+                var noticeArray = [{ActId: 1001, ActivityTitle: 'Basketball will be hold on 30.Mar ...'},
+                    {ActId: 556, ActivityTitle: 'Hip hot dancing club recently...'},
+                    {ActId: 10, ActivityTitle: 'FY.2017 Outing will be hold on 8.April ...'},
+                    {ActId: 20, ActivityTitle: 'Basketball will be hold on 30.March ...'}];
+                self.datasource = new oj.ArrayTableDataSource(noticeArray, {idAttribute: 'ActId'});
+
+                self.buttons = [
+                    {name: 'Search',
+                        sizeClass: 'oj-masonrylayout-tile-1x1'},
+                    {name: 'Ball Games',
+                        sizeClass: 'oj-masonrylayout-tile-1x1'},
+                    {name: 'Gymnastics',
+                        sizeClass: 'oj-masonrylayout-tile-1x1'},
+                    {name: 'Create',
+                        sizeClass: 'oj-masonrylayout-tile-1x1'},
+                    {name: 'Outdoor Activities',
+                        sizeClass: 'oj-masonrylayout-tile-1x1'},
+                    {name: 'Other Activities',
+                        sizeClass: 'oj-masonrylayout-tile-1x1'}
+                ];
 
                 // deal with buttons
                 self.clickedButton = ko.observable("(None clicked yet)");

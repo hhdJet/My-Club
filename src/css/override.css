@@ -5,3 +5,35 @@
     Description:
         This is where any of your application specific styles should be included
 */
+    
+    .demo-centering-container {
+      text-align: center;
+      width: 70%;
+    }
+    
+    .demo-masonry-layout {
+      display: inline-block;
+      width: 60%; /*meaning ?*/
+    }
+    
+/*    @media (min-width: 1024px) {
+      .demo-masonry-layout {
+        width: 480px;
+      }
+    }
+    
+    @media (min-width: 1224px) {
+      .demo-masonry-layout {
+        width: 640px;
+      }
+    }
+    
+    @media (min-width: 1500px) {
+      .demo-masonry-layout {
+        width: 800px;
+      }
+    }*/
+    
+    .demo-scroll-container {
+      overflow: auto;
+    }
